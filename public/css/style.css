@@ -1,5 +1,17 @@
+html {
+	margin: 0;
+	padding: 0;
+	background: green;
+
+}
+
+body {
+	margin: 1px;
+	padding: 0;
+}
+
 #login-section {
-	position: absolute;
+	position: relative;
 	width: 30vw;
 	height: 30vh;
 	background: steelblue;
@@ -9,22 +21,21 @@
 }
 
 #login-form {
-	padding:5vh;
+	padding: 5vh;
 }
 
 #logout-section {
+	position: relative;
 	width: 100vw;
-	height: 5vh;
-	padding: 0;
-	margin: 0;
+	height: 4vh;
+	padding: 1vh;
 	text-align: right;
 	background: steelblue;
 }
+
 #game-section {
-	width:100vw;
-	height:90vh;
+	position: relative;
+	width: 100vw;
+	height: 95vh;
 	padding: 0;
 	margin: 0;
-	top:10vh;
-	background: green; 
-}
