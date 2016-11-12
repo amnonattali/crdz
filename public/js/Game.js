@@ -20,6 +20,9 @@ var Game = function(){
     }
     
     that.drawCard(player){
+        var numCards = deck.getNumCards();
+        var rand = (int)(Math.random() * numCards);
+        
         var drawnCard = deck.removeCard();
         player.addCard(drawnCard);
     }
