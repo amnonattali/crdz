@@ -28,8 +28,9 @@ var Deck = function(type) {
   that.getNth = function(n){
       var counter = 0;
       deck.forEach(function(element, index) {
-          if(element === 1) 
-              counter++;
+          if(element === 1) {
+            counter++;
+          }
           if(counter === n)
               return index;
       }

@@ -38,4 +38,7 @@ var Game = function(){
              }
          }
     }
+    
+    Object.freeze(that);
+    return that;
 }
