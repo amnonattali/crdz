@@ -1,0 +1,30 @@
+#login-section {
+	position: absolute;
+	width: 30vw;
+	height: 30vh;
+	background: steelblue;
+	border: 1px solid blue;
+	left: 35vw;
+	top: 35vh;
+}
+
+#login-form {
+	padding:5vh;
+}
+
+#logout-section {
+	width: 100vw;
+	height: 5vh;
+	padding: 0;
+	margin: 0;
+	text-align: right;
+	background: steelblue;
+}
+#game-section {
+	width:100vw;
+	height:90vh;
+	padding: 0;
+	margin: 0;
+	top:10vh;
+	background: green; 
+}
