@@ -9,7 +9,8 @@ var Deck = function(type) {
   }
 
   var num_cards = 52;
-
+  
+    
   that.removeCard = function(card) {
     deck[card.getIndex] = 0;
     num_cards--;
@@ -22,5 +23,15 @@ var Deck = function(type) {
 
   that.getNumCards = function() {
     return num_cards;
+  }
+  
+  that.getNth = function(n){
+      var counter = 0;
+      deck.forEach(function(element, index) {
+          if(element === 1) 
+              counter++;
+          if(counter === n)
+              return index;
+      }
   }
 }
