@@ -1,9 +1,13 @@
 // Deck class
 
-var Deck = function() {
+var Deck = function(type) {
   that = Object.create(Deck.prototype)
 
-  var deck = new Array(52).fill(1);
+  var deck = new Array(52).fill(0)
+  if (type === "initial_deck") {
+    deck.fill(1);
+  }
+
   var num_cards = 52;
   
     
