@@ -1,0 +1,4 @@
+
+var Location = function(){
+    
+}
