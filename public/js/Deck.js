@@ -25,14 +25,16 @@ var Deck = function(type) {
     return num_cards;
   }
   
-  that.getNth = function(n){
-      var counter = 0;
+  that.getCards = function(){
+      var cardsInDeck = [];
       deck.forEach(function(element, index) {
           if(element === 1) {
-            counter++;
+            cardsInDeck.push(index);
           }
-          if(counter === n)
-              return index;
       }
+      return cardsInDeck;
   }
+  
+  Object.freeze(that);
+  return that;
 }

@@ -18,10 +18,13 @@ var Player = function(name, score) {
   // change score method
 
   that.addCard = function(card) {
-    hand[card.getIndex] = 1;
+    hand[card.getIndex()] = 1;
   }
 
   that.removeCard = function(card) {
-    hand[card.getIndex] = 0;
+    hand[card.getIndex()] = 0;
   }
+  
+  Object.freeze(that);
+  return that;
 }

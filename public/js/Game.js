@@ -25,7 +25,7 @@ var Game = function(){
     that.drawCard(player){
         var numCards = deck.getNumCards();
         var rand = (int)(Math.random() * numCards);
-        var cardIndex = deck.getNth(rand);
+        var cardIndex = deck.getCards()[rand];
         
         var drawnCard = deck.removeCard(cards[cardIndex]);
         player.addCard(drawnCard);
@@ -34,9 +34,17 @@ var Game = function(){
     that.createCards = function(){
          for(var i = 0; i < 4; i++){
              for(var j = 0; j < 13; j++){
-                 cards[i*13 + j] = Card(i, j, IMG); // get images...
+                 cards[i*13 + j] = Card(i, j);
              }
          }
+    }
+    
+    that.getDeck = function(){
+        var deckCards = new Array(deck.getNumCards());
+        deck.getCards().forEach(function(element, index){
+            deckCards[index] = cards[element];
+        }
+        return deckCards;
     }
     
     Object.freeze(that);
