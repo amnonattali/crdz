@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+	var socket = io();
+
 	var reload = function() {
 		$.get('/auth', function(resp) {
 			if (resp.success) {
@@ -24,6 +27,7 @@ $(document).ready(function() {
 				$('#game-section').show();
 				$('#login-section').hide();
 				$('#logout-section').show();
+				socket.emit('login', user);
 				reload();
 			} else {
 				alert("err");
@@ -43,4 +47,9 @@ $(document).ready(function() {
 			}
 		});
 	});	
+
+	//socket
+	socket.on('login', function(username) {
+		
+	});
 });

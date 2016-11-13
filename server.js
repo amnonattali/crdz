@@ -8,6 +8,8 @@ var session = require('express-session');
 var port = 3000;
 
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 var routes = require('./routes/index');
 
@@ -20,4 +22,11 @@ app.use(session({secret: 'secretsecret', resave: true, saveUninitialized: false}
 //paths
 app.use('/', routes);
 
-app.listen(process.env.PORT || port);
+var server = app.listen(process.env.PORT || port);
+var io = require('socket.io').listen(server);
+
+io.on('connection', function (socket) {
+  socket.on('login', function(username) {
+  	io.broadcast.emit('login', username);
+  });
+});
